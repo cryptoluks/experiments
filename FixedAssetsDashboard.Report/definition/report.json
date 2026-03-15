@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU06",
+      "reportVersionAtImport": "5.53",
+      "type": "SharedResources"
+    }
+  },
+  "layoutOptimization": 0,
+  "resourcePackages": [],
+  "config": "{\"version\":\"5.53\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"reportVersionAtImport\":\"5.53\",\"type\":\"SharedResources\"}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"exportDataMode\":1}}",
+  "filters": "[]",
+  "sections": [
+    {
+      "name": "FixedAssetsOverview",
+      "displayName": "Anlagenspiegel - Übersicht",
+      "displayOption": 0,
+      "width": 1280,
+      "height": 720,
+      "filters": "[]",
+      "ordinal": 0,
+      "visualContainers": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "width": 1280,
+          "height": 60,
+          "config": "{\"name\":\"headerBar\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":1280,\"height\":60}}],\"singleVisual\":{\"visualType\":\"shape\",\"objects\":{\"fill\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":\"#1B4F72\"}}}}],\"line\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}"
+        },
+        {
+          "x": 30,
+          "y": 8,
+          "z": 1,
+          "width": 400,
+          "height": 44,
+          "config": "{\"name\":\"titleText\",\"layouts\":[{\"id\":0,\"position\":{\"x\":30,\"y\":8,\"z\":1,\"width\":400,\"height\":44}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"ANLAGENSPIEGEL  \",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"18px\",\"color\":\"#FFFFFF\"}},{\"value\":\"SAP Business One\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"14px\",\"color\":\"#85C1E9\"}}]}]}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 75,
+          "z": 2,
+          "width": 235,
+          "height": 130,
+          "config": "{\"name\":\"kpiAnfangsbestand\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":75,\"z\":2,\"width\":235,\"height\":130}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Anlagengitter.Anfangsbestand\"}]},\"priorQueryRefs\":[{\"queryRef\":\"Anlagengitter.Anfangsbestand\"}],\"objects\":{\"labels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":\"#1B4F72\"}},\"fontSize\":\"22px\"}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":\"#5D6D7E\"}},\"fontSize\":\"10px\",\"text\":\"ANFANGSBESTAND\"}}],\"card\":[{\"properties\":{\"outline\":{\"expr\":{\"Literal\":{\"Value\":\"'OutlineType'[None]'\"}}},\"background\":{\"solid\":{\"color\":\"#FFFFFF\"}},\"dropShadow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}"
+        },
+        {
+          "x": 270,
+          "y": 75,
+          "z": 3,
+          "width": 235,
+          "height": 130,
+          "config": "{\"name\":\"kpiZugaenge\",\"layouts\":[{\"id\":0,\"position\":{\"x\":270,\"y\":75,\"z\":3,\"width\":235,\"height\":130}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Anlagengitter.Zugänge\"}]},\"priorQueryRefs\":[{\"queryRef\":\"Anlagengitter.Zugänge\"}],\"objects\":{\"labels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":\"#148F77\"}},\"fontSize\":\"22px\"}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":\"#5D6D7E\"}},\"fontSize\":\"10px\",\"text\":\"ZUGÄNGE\"}}],\"card\":[{\"properties\":{\"outline\":{\"expr\":{\"Literal\":{\"Value\":\"'OutlineType'[BottomOnly]'\"}}},\"outlineColor\":{\"solid\":{\"color\":\"#148F77\"}},\"outlineWeight\":3,\"background\":{\"solid\":{\"color\":\"#FFFFFF\"}},\"dropShadow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}"
+        },
+        {
+          "x": 520,
+          "y": 75,
+          "z": 4,
+          "width": 235,
+          "height": 130,
+          "config": "{\"name\":\"kpiAbschreibungen\",\"layouts\":[{\"id\":0,\"position\":{\"x\":520,\"y\":75,\"z\":4,\"width\":235,\"height\":130}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Anlagengitter.Abschreibungen\"}]},\"priorQueryRefs\":[{\"queryRef\":\"Anlagengitter.Abschreibungen\"}],\"objects\":{\"labels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":\"#E74C3C\"}},\"fontSize\":\"22px\"}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":\"#5D6D7E\"}},\"fontSize\":\"10px\",\"text\":\"ABSCHREIBUNGEN\"}}],\"card\":[{\"properties\":{\"outline\":{\"expr\":{\"Literal\":{\"Value\":\"'OutlineType'[None]'\"}}},\"background\":{\"solid\":{\"color\":\"#FFFFFF\"}},\"dropShadow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}"
+        },
+        {
+          "x": 770,
+          "y": 75,
+          "z": 5,
+          "width": 235,
+          "height": 130,
+          "config": "{\"name\":\"kpiAbgaenge\",\"layouts\":[{\"id\":0,\"position\":{\"x\":770,\"y\":75,\"z\":5,\"width\":235,\"height\":130}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Anlagengitter.Abgänge\"}]},\"priorQueryRefs\":[{\"queryRef\":\"Anlagengitter.Abgänge\"}],\"objects\":{\"labels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":\"#F39C12\"}},\"fontSize\":\"22px\"}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":\"#5D6D7E\"}},\"fontSize\":\"10px\",\"text\":\"ABGÄNGE\"}}],\"card\":[{\"properties\":{\"outline\":{\"expr\":{\"Literal\":{\"Value\":\"'OutlineType'[None]'\"}}},\"background\":{\"solid\":{\"color\":\"#FFFFFF\"}},\"dropShadow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}"
+        },
+        {
+          "x": 1020,
+          "y": 75,
+          "z": 6,
+          "width": 235,
+          "height": 130,
+          "config": "{\"name\":\"kpiRestbuchwert\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1020,\"y\":75,\"z\":6,\"width\":235,\"height\":130}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Anlagengitter.Restbuchwert\"}]},\"priorQueryRefs\":[{\"queryRef\":\"Anlagengitter.Restbuchwert\"}],\"objects\":{\"labels\":[{\"properties\":{\"color\":{\"solid\":{\"color\":\"#1B4F72\"}},\"fontSize\":\"22px\"}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":\"#5D6D7E\"}},\"fontSize\":\"10px\",\"text\":\"RESTBUCHWERT\"}}],\"card\":[{\"properties\":{\"outline\":{\"expr\":{\"Literal\":{\"Value\":\"'OutlineType'[None]'\"}}},\"background\":{\"solid\":{\"color\":\"#FFFFFF\"}},\"dropShadow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 220,
+          "z": 7,
+          "width": 610,
+          "height": 320,
+          "config": "{\"name\":\"chartZugaengeMonat\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":220,\"z\":7,\"width\":610,\"height\":320}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Kalender.MonatName\"}],\"Y\":[{\"queryRef\":\"Anlagengitter.Zugänge\"}]},\"objects\":{\"general\":[{\"properties\":{\"title\":\"Zugänge nach Monat\"}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":\"#2ECC71\"}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"displayUnits\":\"1000000\"}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayUnits\":\"1000000\",\"labelPrecision\":0,\"fontSize\":\"9px\"}}]}}}"
+        },
+        {
+          "x": 650,
+          "y": 220,
+          "z": 8,
+          "width": 610,
+          "height": 320,
+          "config": "{\"name\":\"chartZugaengeAnlagenklasse\",\"layouts\":[{\"id\":0,\"position\":{\"x\":650,\"y\":220,\"z\":8,\"width\":610,\"height\":320}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Anlagengitter.AssetClassName\"}],\"Y\":[{\"queryRef\":\"Anlagengitter.Zugänge\"}]},\"objects\":{\"general\":[{\"properties\":{\"title\":\"Zugänge nach Anlagenklasse\"}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":\"#3498DB\"}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"displayUnits\":\"1000000\"}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayUnits\":\"1000000\",\"labelPrecision\":1,\"fontSize\":\"9px\"}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 550,
+          "z": 9,
+          "width": 1240,
+          "height": 30,
+          "config": "{\"name\":\"footerText\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":550,\"z\":9,\"width\":1240,\"height\":30}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Datenquelle: SAP Business One - Anlagengitter | Letzte Aktualisierung: automatisch bei Datenaktualisierung\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"9px\",\"color\":\"#95A5A6\"}}]}]}}]}}}"
+        }
+      ]
+    },
+    {
+      "name": "FixedAssetsDetail",
+      "displayName": "Anlagenspiegel - Details",
+      "displayOption": 0,
+      "width": 1280,
+      "height": 720,
+      "filters": "[]",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "width": 1280,
+          "height": 60,
+          "config": "{\"name\":\"headerBarDetail\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":1280,\"height\":60}}],\"singleVisual\":{\"visualType\":\"shape\",\"objects\":{\"fill\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":\"#1B4F72\"}}}}],\"line\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}"
+        },
+        {
+          "x": 30,
+          "y": 8,
+          "z": 1,
+          "width": 500,
+          "height": 44,
+          "config": "{\"name\":\"titleTextDetail\",\"layouts\":[{\"id\":0,\"position\":{\"x\":30,\"y\":8,\"z\":1,\"width\":500,\"height\":44}}],\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"ANLAGENSPIEGEL  \",\"textStyle\":{\"fontFamily\":\"Segoe UI Semibold\",\"fontSize\":\"18px\",\"color\":\"#FFFFFF\"}},{\"value\":\"Details nach Standort & Anlagenklasse\",\"textStyle\":{\"fontFamily\":\"Segoe UI\",\"fontSize\":\"14px\",\"color\":\"#85C1E9\"}}]}]}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 75,
+          "z": 2,
+          "width": 1240,
+          "height": 280,
+          "config": "{\"name\":\"tableAnlagengitter\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":75,\"z\":2,\"width\":1240,\"height\":280}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Anlagengitter.ItemCode\"},{\"queryRef\":\"Anlagengitter.ItemName\"},{\"queryRef\":\"Anlagengitter.AssetClassName\"},{\"queryRef\":\"Anlagengitter.Standort\"},{\"queryRef\":\"Anlagengitter.Zugang\"},{\"queryRef\":\"Anlagengitter.Abgang\"},{\"queryRef\":\"Anlagengitter.AfA_Zugang\"},{\"queryRef\":\"Anlagengitter.Buchwert_Ende\"},{\"queryRef\":\"Anlagengitter.Status\"}]},\"objects\":{\"general\":[{\"properties\":{\"title\":\"SAP B1 Anlagengitter - Einzelpositionen\"}}],\"columnHeaders\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":\"#FFFFFF\"}},\"backColor\":{\"solid\":{\"color\":\"#1B4F72\"}}}}],\"values\":[{\"properties\":{\"fontSize\":\"9px\"}}],\"total\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":\"#FFFFFF\"}},\"backColor\":{\"solid\":{\"color\":\"#2E86C1\"}}}}]}}}"
+        },
+        {
+          "x": 20,
+          "y": 370,
+          "z": 3,
+          "width": 610,
+          "height": 280,
+          "config": "{\"name\":\"chartStandort\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":370,\"z\":3,\"width\":610,\"height\":280}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Anlagengitter.Standort\"}],\"Y\":[{\"queryRef\":\"Anlagengitter.Restbuchwert\"}]},\"objects\":{\"general\":[{\"properties\":{\"title\":\"Restbuchwert nach Standort\"}}]}}}"
+        },
+        {
+          "x": 650,
+          "y": 370,
+          "z": 4,
+          "width": 610,
+          "height": 280,
+          "config": "{\"name\":\"chartAbschreibungKlasse\",\"layouts\":[{\"id\":0,\"position\":{\"x\":650,\"y\":370,\"z\":4,\"width\":610,\"height\":280}}],\"singleVisual\":{\"visualType\":\"treemap\",\"projections\":{\"Group\":[{\"queryRef\":\"Anlagengitter.AssetClassName\"}],\"Values\":[{\"queryRef\":\"Anlagengitter.Abschreibungen\"}]},\"objects\":{\"general\":[{\"properties\":{\"title\":\"Abschreibungen nach Anlagenklasse\"}}]}}}"
+        }
+      ]
+    }
+  ]
+}

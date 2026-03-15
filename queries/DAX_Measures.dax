@@ -1,0 +1,100 @@
+// ============================================================
+// DAX Measures - Anlagenspiegel Dashboard
+// SAP Business One - Fixed Assets
+// ============================================================
+
+// --- KPI Hauptkennzahlen ---
+
+Anfangsbestand = SUM(Anlagengitter[AHK_Vortrag])
+
+Zugänge = SUM(Anlagengitter[Zugang])
+
+Abschreibungen = SUM(Anlagengitter[AfA_Zugang])
+
+Abgänge = SUM(Anlagengitter[Abgang])
+
+Restbuchwert = SUM(Anlagengitter[Buchwert_Ende])
+
+Anzahl Anlagen = COUNTROWS(Anlagengitter)
+
+Anzahl Aktive Anlagen =
+    CALCULATE(
+        COUNTROWS(Anlagengitter),
+        Anlagengitter[Status] = "Aktiv"
+    )
+
+
+// --- Delta-Berechnungen (Vormonat / Vorjahr) ---
+
+Zugänge Vormonat =
+    VAR CurrentMonth = SELECTEDVALUE(Kalender[JahrMonat])
+    VAR PrevMonthDate = EDATE(DATE(LEFT(CurrentMonth,4), MID(CurrentMonth,6,2), 1), -1)
+    VAR PrevMonth = FORMAT(PrevMonthDate, "YYYY-MM")
+    RETURN
+        CALCULATE(
+            [Zugänge],
+            ALL(Kalender),
+            Kalender[JahrMonat] = PrevMonth
+        )
+
+Delta Zugänge VM =
+    [Zugänge] - [Zugänge Vormonat]
+
+Delta Zugänge VM % =
+    DIVIDE([Delta Zugänge VM], [Zugänge Vormonat], BLANK())
+
+Zugänge Vorjahr =
+    VAR CurrentMonth = SELECTEDVALUE(Kalender[JahrMonat])
+    VAR PrevYearDate = EDATE(DATE(LEFT(CurrentMonth,4), MID(CurrentMonth,6,2), 1), -12)
+    VAR PrevYearMonth = FORMAT(PrevYearDate, "YYYY-MM")
+    RETURN
+        CALCULATE(
+            [Zugänge],
+            ALL(Kalender),
+            Kalender[JahrMonat] = PrevYearMonth
+        )
+
+Delta Zugänge VJ =
+    [Zugänge] - [Zugänge Vorjahr]
+
+Delta Zugänge VJ % =
+    DIVIDE([Delta Zugänge VJ], [Zugänge Vorjahr], BLANK())
+
+
+// --- Abschreibungs-Kennzahlen ---
+
+Abschreibungsquote =
+    DIVIDE([Abschreibungen], [Anfangsbestand] + [Zugänge], BLANK())
+
+Buchwert-Intensität =
+    DIVIDE([Restbuchwert], [Anfangsbestand] + [Zugänge], BLANK())
+
+Durchschnittl. Nutzungsdauer =
+    AVERAGE(Anlagengitter[Nutzungsdauer])
+
+Durchschnittl. Alter =
+    AVERAGEX(
+        FILTER(Anlagengitter, Anlagengitter[Status] = "Aktiv"),
+        DATEDIFF(Anlagengitter[CapDate], TODAY(), YEAR)
+    )
+
+
+// --- Kumulierte Werte ---
+
+Kum. Zugänge =
+    CALCULATE(
+        [Zugänge],
+        FILTER(
+            ALL(Kalender[JahrMonat]),
+            Kalender[JahrMonat] <= MAX(Kalender[JahrMonat])
+        )
+    )
+
+Kum. Abschreibungen =
+    CALCULATE(
+        [Abschreibungen],
+        FILTER(
+            ALL(Kalender[JahrMonat]),
+            Kalender[JahrMonat] <= MAX(Kalender[JahrMonat])
+        )
+    )
