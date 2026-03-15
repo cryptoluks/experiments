@@ -1,5 +1,6 @@
 {
   "name": "FixedAssetsDashboard",
+  "id": "FixedAssetsDashboard",
   "compatibilityLevel": 1567,
   "model": {
     "culture": "de-DE",
@@ -8,31 +9,138 @@
       "returnErrorValuesAsNull": true
     },
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "de-DE",
     "tables": [
       {
         "name": "Anlagengitter",
+        "lineageTag": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
         "columns": [
-          { "name": "ItemCode", "dataType": "string", "sourceColumn": "ItemCode" },
-          { "name": "ItemName", "dataType": "string", "sourceColumn": "ItemName" },
-          { "name": "AssetClass", "dataType": "int64", "sourceColumn": "AssetClass" },
-          { "name": "AssetClassName", "dataType": "string", "sourceColumn": "AssetClassName" },
-          { "name": "CapDate", "dataType": "dateTime", "sourceColumn": "CapDate" },
-          { "name": "AHK_Vortrag", "dataType": "decimal", "sourceColumn": "AHK_Vortrag" },
-          { "name": "Zugang", "dataType": "decimal", "sourceColumn": "Zugang" },
-          { "name": "Abgang", "dataType": "decimal", "sourceColumn": "Abgang" },
-          { "name": "AHK_Endstand", "dataType": "decimal", "sourceColumn": "AHK_Endstand" },
-          { "name": "AfA_Vortrag", "dataType": "decimal", "sourceColumn": "AfA_Vortrag" },
-          { "name": "AfA_Zugang", "dataType": "decimal", "sourceColumn": "AfA_Zugang" },
-          { "name": "AfA_Abgang", "dataType": "decimal", "sourceColumn": "AfA_Abgang" },
-          { "name": "AfA_Endstand", "dataType": "decimal", "sourceColumn": "AfA_Endstand" },
-          { "name": "Buchwert_Anfang", "dataType": "decimal", "sourceColumn": "Buchwert_Anfang" },
-          { "name": "Buchwert_Ende", "dataType": "decimal", "sourceColumn": "Buchwert_Ende" },
-          { "name": "Nutzungsdauer", "dataType": "int64", "sourceColumn": "Nutzungsdauer" },
-          { "name": "AfA_Methode", "dataType": "string", "sourceColumn": "AfA_Methode" },
-          { "name": "Kostenstelle", "dataType": "string", "sourceColumn": "Kostenstelle" },
-          { "name": "Standort", "dataType": "string", "sourceColumn": "Standort" },
-          { "name": "Status", "dataType": "string", "sourceColumn": "Status" },
-          { "name": "BuchungsMonat", "dataType": "string", "sourceColumn": "BuchungsMonat" }
+          {
+            "name": "ItemCode",
+            "dataType": "string",
+            "sourceColumn": "ItemCode",
+            "lineageTag": "c001-0001-0001-0001-000000000001"
+          },
+          {
+            "name": "ItemName",
+            "dataType": "string",
+            "sourceColumn": "ItemName",
+            "lineageTag": "c001-0001-0001-0001-000000000002"
+          },
+          {
+            "name": "AssetClass",
+            "dataType": "int64",
+            "sourceColumn": "AssetClass",
+            "lineageTag": "c001-0001-0001-0001-000000000003"
+          },
+          {
+            "name": "AssetClassName",
+            "dataType": "string",
+            "sourceColumn": "AssetClassName",
+            "lineageTag": "c001-0001-0001-0001-000000000004"
+          },
+          {
+            "name": "CapDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CapDate",
+            "lineageTag": "c001-0001-0001-0001-000000000005"
+          },
+          {
+            "name": "AHK_Vortrag",
+            "dataType": "decimal",
+            "sourceColumn": "AHK_Vortrag",
+            "lineageTag": "c001-0001-0001-0001-000000000006"
+          },
+          {
+            "name": "Zugang",
+            "dataType": "decimal",
+            "sourceColumn": "Zugang",
+            "lineageTag": "c001-0001-0001-0001-000000000007"
+          },
+          {
+            "name": "Abgang",
+            "dataType": "decimal",
+            "sourceColumn": "Abgang",
+            "lineageTag": "c001-0001-0001-0001-000000000008"
+          },
+          {
+            "name": "AHK_Endstand",
+            "dataType": "decimal",
+            "sourceColumn": "AHK_Endstand",
+            "lineageTag": "c001-0001-0001-0001-000000000009"
+          },
+          {
+            "name": "AfA_Vortrag",
+            "dataType": "decimal",
+            "sourceColumn": "AfA_Vortrag",
+            "lineageTag": "c001-0001-0001-0001-000000000010"
+          },
+          {
+            "name": "AfA_Zugang",
+            "dataType": "decimal",
+            "sourceColumn": "AfA_Zugang",
+            "lineageTag": "c001-0001-0001-0001-000000000011"
+          },
+          {
+            "name": "AfA_Abgang",
+            "dataType": "decimal",
+            "sourceColumn": "AfA_Abgang",
+            "lineageTag": "c001-0001-0001-0001-000000000012"
+          },
+          {
+            "name": "AfA_Endstand",
+            "dataType": "decimal",
+            "sourceColumn": "AfA_Endstand",
+            "lineageTag": "c001-0001-0001-0001-000000000013"
+          },
+          {
+            "name": "Buchwert_Anfang",
+            "dataType": "decimal",
+            "sourceColumn": "Buchwert_Anfang",
+            "lineageTag": "c001-0001-0001-0001-000000000014"
+          },
+          {
+            "name": "Buchwert_Ende",
+            "dataType": "decimal",
+            "sourceColumn": "Buchwert_Ende",
+            "lineageTag": "c001-0001-0001-0001-000000000015"
+          },
+          {
+            "name": "Nutzungsdauer",
+            "dataType": "int64",
+            "sourceColumn": "Nutzungsdauer",
+            "lineageTag": "c001-0001-0001-0001-000000000016"
+          },
+          {
+            "name": "AfA_Methode",
+            "dataType": "string",
+            "sourceColumn": "AfA_Methode",
+            "lineageTag": "c001-0001-0001-0001-000000000017"
+          },
+          {
+            "name": "Kostenstelle",
+            "dataType": "string",
+            "sourceColumn": "Kostenstelle",
+            "lineageTag": "c001-0001-0001-0001-000000000018"
+          },
+          {
+            "name": "Standort",
+            "dataType": "string",
+            "sourceColumn": "Standort",
+            "lineageTag": "c001-0001-0001-0001-000000000019"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "lineageTag": "c001-0001-0001-0001-000000000020"
+          },
+          {
+            "name": "BuchungsMonat",
+            "dataType": "string",
+            "sourceColumn": "BuchungsMonat",
+            "lineageTag": "c001-0001-0001-0001-000000000021"
+          }
         ],
         "partitions": [
           {
@@ -40,24 +148,7 @@
             "mode": "import",
             "source": {
               "type": "m",
-              "expression": [
-                "let",
-                "    Quelle = Csv.Document(File.Contents(\"data/sap_b1_anlagengitter.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
-                "    #\"Höher gestufte Header\" = Table.PromoteHeaders(Quelle, [PromoteAllScalars=true]),",
-                "    #\"Geänderter Typ\" = Table.TransformColumnTypes(#\"Höher gestufte Header\", {",
-                "        {\"ItemCode\", type text}, {\"ItemName\", type text}, {\"AssetClass\", Int64.Type},",
-                "        {\"AssetClassName\", type text}, {\"CapDate\", type date},",
-                "        {\"AHK_Vortrag\", type number}, {\"Zugang\", type number}, {\"Abgang\", type number},",
-                "        {\"AHK_Endstand\", type number}, {\"AfA_Vortrag\", type number},",
-                "        {\"AfA_Zugang\", type number}, {\"AfA_Abgang\", type number},",
-                "        {\"AfA_Endstand\", type number}, {\"Buchwert_Anfang\", type number},",
-                "        {\"Buchwert_Ende\", type number}, {\"Nutzungsdauer\", Int64.Type},",
-                "        {\"AfA_Methode\", type text}, {\"Kostenstelle\", type text},",
-                "        {\"Standort\", type text}, {\"Status\", type text}, {\"BuchungsMonat\", type text}",
-                "    })",
-                "in",
-                "    #\"Geänderter Typ\""
-              ]
+              "expression": "let\n    Quelle = Csv.Document(File.Contents(\"data/sap_b1_anlagengitter.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),\n    #\"Höher gestufte Header\" = Table.PromoteHeaders(Quelle, [PromoteAllScalars=true]),\n    #\"Geänderter Typ\" = Table.TransformColumnTypes(#\"Höher gestufte Header\", {\n        {\"ItemCode\", type text}, {\"ItemName\", type text}, {\"AssetClass\", Int64.Type},\n        {\"AssetClassName\", type text}, {\"CapDate\", type date},\n        {\"AHK_Vortrag\", type number}, {\"Zugang\", type number}, {\"Abgang\", type number},\n        {\"AHK_Endstand\", type number}, {\"AfA_Vortrag\", type number},\n        {\"AfA_Zugang\", type number}, {\"AfA_Abgang\", type number},\n        {\"AfA_Endstand\", type number}, {\"Buchwert_Anfang\", type number},\n        {\"Buchwert_Ende\", type number}, {\"Nutzungsdauer\", Int64.Type},\n        {\"AfA_Methode\", type text}, {\"Kostenstelle\", type text},\n        {\"Standort\", type text}, {\"Status\", type text}, {\"BuchungsMonat\", type text}\n    })\nin\n    #\"Geänderter Typ\""
             }
           }
         ],
@@ -65,63 +156,100 @@
           {
             "name": "Anfangsbestand",
             "expression": "SUM(Anlagengitter[AHK_Vortrag])",
-            "formatString": "#,##0"
+            "formatString": "#,##0",
+            "lineageTag": "m001-0001-0001-0001-000000000001"
           },
           {
             "name": "Zugänge",
             "expression": "SUM(Anlagengitter[Zugang])",
-            "formatString": "#,##0"
+            "formatString": "#,##0",
+            "lineageTag": "m001-0001-0001-0001-000000000002"
           },
           {
             "name": "Abschreibungen",
             "expression": "SUM(Anlagengitter[AfA_Zugang])",
-            "formatString": "#,##0"
+            "formatString": "#,##0",
+            "lineageTag": "m001-0001-0001-0001-000000000003"
           },
           {
             "name": "Abgänge",
             "expression": "SUM(Anlagengitter[Abgang])",
-            "formatString": "#,##0"
+            "formatString": "#,##0",
+            "lineageTag": "m001-0001-0001-0001-000000000004"
           },
           {
             "name": "Restbuchwert",
             "expression": "SUM(Anlagengitter[Buchwert_Ende])",
-            "formatString": "#,##0"
+            "formatString": "#,##0",
+            "lineageTag": "m001-0001-0001-0001-000000000005"
           },
           {
             "name": "Anzahl Anlagen",
             "expression": "COUNTROWS(Anlagengitter)",
-            "formatString": "#,##0"
+            "formatString": "#,##0",
+            "lineageTag": "m001-0001-0001-0001-000000000006"
           },
           {
             "name": "Zugänge Vormonat",
-            "expression": [
-              "VAR CurrentMonth = MAX(Anlagengitter[BuchungsMonat])",
-              "VAR PrevMonth = FORMAT(DATEADD(DATE(LEFT(CurrentMonth,4), MID(CurrentMonth,6,2), 1), -1, MONTH), \"YYYY-MM\")",
-              "RETURN CALCULATE([Zugänge], Anlagengitter[BuchungsMonat] = PrevMonth)"
-            ],
-            "formatString": "#,##0"
+            "expression": "VAR CurrentMonth = MAX(Anlagengitter[BuchungsMonat]) VAR PrevMonth = FORMAT(DATEADD(DATE(LEFT(CurrentMonth,4), MID(CurrentMonth,6,2), 1), -1, MONTH), \"YYYY-MM\") RETURN CALCULATE([Zugänge], Anlagengitter[BuchungsMonat] = PrevMonth)",
+            "formatString": "#,##0",
+            "lineageTag": "m001-0001-0001-0001-000000000007"
           },
           {
             "name": "Delta Vormonat Zugänge",
             "expression": "[Zugänge] - [Zugänge Vormonat]",
-            "formatString": "#,##0"
+            "formatString": "#,##0",
+            "lineageTag": "m001-0001-0001-0001-000000000008"
           },
           {
             "name": "Delta Vormonat Zugänge %",
             "expression": "DIVIDE([Delta Vormonat Zugänge], [Zugänge Vormonat], 0)",
-            "formatString": "0.0%"
+            "formatString": "0.0%",
+            "lineageTag": "m001-0001-0001-0001-000000000009"
           }
         ]
       },
       {
         "name": "Kalender",
+        "lineageTag": "b1b2c3d4-e5f6-7890-abcd-ef1234567891",
         "columns": [
-          { "name": "Datum", "dataType": "dateTime", "sourceColumn": "Datum", "isKey": true },
-          { "name": "Jahr", "dataType": "int64", "sourceColumn": "Jahr" },
-          { "name": "Monat", "dataType": "int64", "sourceColumn": "Monat" },
-          { "name": "MonatName", "dataType": "string", "sourceColumn": "MonatName" },
-          { "name": "Quartal", "dataType": "string", "sourceColumn": "Quartal" },
-          { "name": "JahrMonat", "dataType": "string", "sourceColumn": "JahrMonat" }
+          {
+            "name": "Datum",
+            "dataType": "dateTime",
+            "sourceColumn": "Datum",
+            "isKey": true,
+            "lineageTag": "c002-0001-0001-0001-000000000001"
+          },
+          {
+            "name": "Jahr",
+            "dataType": "int64",
+            "sourceColumn": "Jahr",
+            "lineageTag": "c002-0001-0001-0001-000000000002"
+          },
+          {
+            "name": "Monat",
+            "dataType": "int64",
+            "sourceColumn": "Monat",
+            "lineageTag": "c002-0001-0001-0001-000000000003"
+          },
+          {
+            "name": "MonatName",
+            "dataType": "string",
+            "sourceColumn": "MonatName",
+            "lineageTag": "c002-0001-0001-0001-000000000004"
+          },
+          {
+            "name": "Quartal",
+            "dataType": "string",
+            "sourceColumn": "Quartal",
+            "lineageTag": "c002-0001-0001-0001-000000000005"
+          },
+          {
+            "name": "JahrMonat",
+            "dataType": "string",
+            "sourceColumn": "JahrMonat",
+            "lineageTag": "c002-0001-0001-0001-000000000006"
+          }
         ],
         "partitions": [
           {
@@ -129,21 +257,7 @@
             "mode": "import",
             "source": {
               "type": "m",
-              "expression": [
-                "let",
-                "    StartDate = #date(2023, 1, 1),",
-                "    EndDate = #date(2025, 12, 31),",
-                "    DateList = List.Dates(StartDate, Duration.Days(EndDate - StartDate) + 1, #duration(1, 0, 0, 0)),",
-                "    #\"Tabelle\" = Table.FromList(DateList, Splitter.SplitByNothing(), {\"Datum\"}, null, ExtraValues.Error),",
-                "    #\"Typ\" = Table.TransformColumnTypes(#\"Tabelle\", {{\"Datum\", type date}}),",
-                "    #\"Jahr\" = Table.AddColumn(#\"Typ\", \"Jahr\", each Date.Year([Datum]), Int64.Type),",
-                "    #\"Monat\" = Table.AddColumn(#\"Jahr\", \"Monat\", each Date.Month([Datum]), Int64.Type),",
-                "    #\"MonatName\" = Table.AddColumn(#\"Monat\", \"MonatName\", each Date.ToText([Datum], \"MMM\"), type text),",
-                "    #\"Quartal\" = Table.AddColumn(#\"MonatName\", \"Quartal\", each \"Q\" & Text.From(Date.QuarterOfYear([Datum])), type text),",
-                "    #\"JahrMonat\" = Table.AddColumn(#\"Quartal\", \"JahrMonat\", each Date.ToText([Datum], \"yyyy-MM\"), type text)",
-                "in",
-                "    #\"JahrMonat\""
-              ]
+              "expression": "let\n    StartDate = #date(2023, 1, 1),\n    EndDate = #date(2025, 12, 31),\n    DateList = List.Dates(StartDate, Duration.Days(EndDate - StartDate) + 1, #duration(1, 0, 0, 0)),\n    #\"Tabelle\" = Table.FromList(DateList, Splitter.SplitByNothing(), {\"Datum\"}, null, ExtraValues.Error),\n    #\"Typ\" = Table.TransformColumnTypes(#\"Tabelle\", {{\"Datum\", type date}}),\n    #\"Jahr\" = Table.AddColumn(#\"Typ\", \"Jahr\", each Date.Year([Datum]), Int64.Type),\n    #\"Monat\" = Table.AddColumn(#\"Jahr\", \"Monat\", each Date.Month([Datum]), Int64.Type),\n    #\"MonatName\" = Table.AddColumn(#\"Monat\", \"MonatName\", each Date.ToText([Datum], \"MMM\"), type text),\n    #\"Quartal\" = Table.AddColumn(#\"MonatName\", \"Quartal\", each \"Q\" & Text.From(Date.QuarterOfYear([Datum])), type text),\n    #\"JahrMonat\" = Table.AddColumn(#\"Quartal\", \"JahrMonat\", each Date.ToText([Datum], \"yyyy-MM\"), type text)\nin\n    #\"JahrMonat\""
             }
           }
         ]
@@ -163,6 +277,10 @@
       {
         "name": "PBI_QueryOrder",
         "value": "[\"Anlagengitter\",\"Kalender\"]"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.138.0.0 (24.11)"
       }
     ]
   }

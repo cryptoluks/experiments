@@ -5,6 +5,11 @@
       "report": {
         "path": "FixedAssetsDashboard.Report"
       }
+    },
+    {
+      "semanticModel": {
+        "path": "FixedAssetsDashboard.SemanticModel"
+      }
     }
   ],
   "settings": {
