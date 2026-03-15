@@ -1,0 +1,169 @@
+{
+  "name": "FixedAssetsDashboard",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "de-DE",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "tables": [
+      {
+        "name": "Anlagengitter",
+        "columns": [
+          { "name": "ItemCode", "dataType": "string", "sourceColumn": "ItemCode" },
+          { "name": "ItemName", "dataType": "string", "sourceColumn": "ItemName" },
+          { "name": "AssetClass", "dataType": "int64", "sourceColumn": "AssetClass" },
+          { "name": "AssetClassName", "dataType": "string", "sourceColumn": "AssetClassName" },
+          { "name": "CapDate", "dataType": "dateTime", "sourceColumn": "CapDate" },
+          { "name": "AHK_Vortrag", "dataType": "decimal", "sourceColumn": "AHK_Vortrag" },
+          { "name": "Zugang", "dataType": "decimal", "sourceColumn": "Zugang" },
+          { "name": "Abgang", "dataType": "decimal", "sourceColumn": "Abgang" },
+          { "name": "AHK_Endstand", "dataType": "decimal", "sourceColumn": "AHK_Endstand" },
+          { "name": "AfA_Vortrag", "dataType": "decimal", "sourceColumn": "AfA_Vortrag" },
+          { "name": "AfA_Zugang", "dataType": "decimal", "sourceColumn": "AfA_Zugang" },
+          { "name": "AfA_Abgang", "dataType": "decimal", "sourceColumn": "AfA_Abgang" },
+          { "name": "AfA_Endstand", "dataType": "decimal", "sourceColumn": "AfA_Endstand" },
+          { "name": "Buchwert_Anfang", "dataType": "decimal", "sourceColumn": "Buchwert_Anfang" },
+          { "name": "Buchwert_Ende", "dataType": "decimal", "sourceColumn": "Buchwert_Ende" },
+          { "name": "Nutzungsdauer", "dataType": "int64", "sourceColumn": "Nutzungsdauer" },
+          { "name": "AfA_Methode", "dataType": "string", "sourceColumn": "AfA_Methode" },
+          { "name": "Kostenstelle", "dataType": "string", "sourceColumn": "Kostenstelle" },
+          { "name": "Standort", "dataType": "string", "sourceColumn": "Standort" },
+          { "name": "Status", "dataType": "string", "sourceColumn": "Status" },
+          { "name": "BuchungsMonat", "dataType": "string", "sourceColumn": "BuchungsMonat" }
+        ],
+        "partitions": [
+          {
+            "name": "Anlagengitter",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Quelle = Csv.Document(File.Contents(\"data/sap_b1_anlagengitter.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Höher gestufte Header\" = Table.PromoteHeaders(Quelle, [PromoteAllScalars=true]),",
+                "    #\"Geänderter Typ\" = Table.TransformColumnTypes(#\"Höher gestufte Header\", {",
+                "        {\"ItemCode\", type text}, {\"ItemName\", type text}, {\"AssetClass\", Int64.Type},",
+                "        {\"AssetClassName\", type text}, {\"CapDate\", type date},",
+                "        {\"AHK_Vortrag\", type number}, {\"Zugang\", type number}, {\"Abgang\", type number},",
+                "        {\"AHK_Endstand\", type number}, {\"AfA_Vortrag\", type number},",
+                "        {\"AfA_Zugang\", type number}, {\"AfA_Abgang\", type number},",
+                "        {\"AfA_Endstand\", type number}, {\"Buchwert_Anfang\", type number},",
+                "        {\"Buchwert_Ende\", type number}, {\"Nutzungsdauer\", Int64.Type},",
+                "        {\"AfA_Methode\", type text}, {\"Kostenstelle\", type text},",
+                "        {\"Standort\", type text}, {\"Status\", type text}, {\"BuchungsMonat\", type text}",
+                "    })",
+                "in",
+                "    #\"Geänderter Typ\""
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Anfangsbestand",
+            "expression": "SUM(Anlagengitter[AHK_Vortrag])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Zugänge",
+            "expression": "SUM(Anlagengitter[Zugang])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Abschreibungen",
+            "expression": "SUM(Anlagengitter[AfA_Zugang])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Abgänge",
+            "expression": "SUM(Anlagengitter[Abgang])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Restbuchwert",
+            "expression": "SUM(Anlagengitter[Buchwert_Ende])",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Anzahl Anlagen",
+            "expression": "COUNTROWS(Anlagengitter)",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Zugänge Vormonat",
+            "expression": [
+              "VAR CurrentMonth = MAX(Anlagengitter[BuchungsMonat])",
+              "VAR PrevMonth = FORMAT(DATEADD(DATE(LEFT(CurrentMonth,4), MID(CurrentMonth,6,2), 1), -1, MONTH), \"YYYY-MM\")",
+              "RETURN CALCULATE([Zugänge], Anlagengitter[BuchungsMonat] = PrevMonth)"
+            ],
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Delta Vormonat Zugänge",
+            "expression": "[Zugänge] - [Zugänge Vormonat]",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Delta Vormonat Zugänge %",
+            "expression": "DIVIDE([Delta Vormonat Zugänge], [Zugänge Vormonat], 0)",
+            "formatString": "0.0%"
+          }
+        ]
+      },
+      {
+        "name": "Kalender",
+        "columns": [
+          { "name": "Datum", "dataType": "dateTime", "sourceColumn": "Datum", "isKey": true },
+          { "name": "Jahr", "dataType": "int64", "sourceColumn": "Jahr" },
+          { "name": "Monat", "dataType": "int64", "sourceColumn": "Monat" },
+          { "name": "MonatName", "dataType": "string", "sourceColumn": "MonatName" },
+          { "name": "Quartal", "dataType": "string", "sourceColumn": "Quartal" },
+          { "name": "JahrMonat", "dataType": "string", "sourceColumn": "JahrMonat" }
+        ],
+        "partitions": [
+          {
+            "name": "Kalender",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    StartDate = #date(2023, 1, 1),",
+                "    EndDate = #date(2025, 12, 31),",
+                "    DateList = List.Dates(StartDate, Duration.Days(EndDate - StartDate) + 1, #duration(1, 0, 0, 0)),",
+                "    #\"Tabelle\" = Table.FromList(DateList, Splitter.SplitByNothing(), {\"Datum\"}, null, ExtraValues.Error),",
+                "    #\"Typ\" = Table.TransformColumnTypes(#\"Tabelle\", {{\"Datum\", type date}}),",
+                "    #\"Jahr\" = Table.AddColumn(#\"Typ\", \"Jahr\", each Date.Year([Datum]), Int64.Type),",
+                "    #\"Monat\" = Table.AddColumn(#\"Jahr\", \"Monat\", each Date.Month([Datum]), Int64.Type),",
+                "    #\"MonatName\" = Table.AddColumn(#\"Monat\", \"MonatName\", each Date.ToText([Datum], \"MMM\"), type text),",
+                "    #\"Quartal\" = Table.AddColumn(#\"MonatName\", \"Quartal\", each \"Q\" & Text.From(Date.QuarterOfYear([Datum])), type text),",
+                "    #\"JahrMonat\" = Table.AddColumn(#\"Quartal\", \"JahrMonat\", each Date.ToText([Datum], \"yyyy-MM\"), type text)",
+                "in",
+                "    #\"JahrMonat\""
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "rel_Anlagengitter_Kalender",
+        "fromTable": "Anlagengitter",
+        "fromColumn": "CapDate",
+        "toTable": "Kalender",
+        "toColumn": "Datum",
+        "crossFilteringBehavior": "bothDirections"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Anlagengitter\",\"Kalender\"]"
+      }
+    ]
+  }
+}
